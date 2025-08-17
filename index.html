@@ -1,137 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aashish Rijal - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aashish Rijal - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a202c, #2d3748);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .skill-card, .project-card, .experience-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover, .project-card:hover, .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .navbar {
+      transition: background-color 0.3s ease;
+    }
+    .navbar.scrolled {
+      background-color: rgba(26, 32, 44, 0.95);
+    }
+    .profile-img {
+      transition: transform 0.5s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Aashish Rijal</h1>
-        <p>Backend Developer</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar fixed top-0 w-full z-50 py-4 px-6 flex justify-between items-center">
+    <div class="text-2xl font-bold">Aashish Rijal</div>
+    <div class="space-x-4">
+      <a href="#about" class="hover:text-blue-400 transition">About</a>
+      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+      <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+    </div>
+  </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Passionate Backend Developer specializing in Node.js and Express.js. Building scalable web applications and always learning new technologies. Passionate about seamless user experiences and web performance, I use Tailwind CSS for responsive design and integrate various libraries to enhance functionality.</p>
-    </section>
+  <!-- Hero Section -->
+  <section id="about" class="min-h-screen flex items-center justify-center py-20">
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>NestJS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>Laravel</li>
-            <li>Tailwind CSS</li>
-            <li>Responsive Design</li>
-        </ul>
-    </section>
+    <div class="container mx-auto px-6 text-center section">
+                    <a class="text-blue-400 text-bold text-2xl text-center p-5 mb-7" style="margin-bottom: 100px;" href="https://aashishrijal.com.np" target="_blank">www.aashishrijal.com.np</a>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li><strong>Software Engineer - Insight Workshop</strong><br>JavaScript/Python Developer</li>
-            <li><strong>Backend Developer - YoungInnovations</strong><br>Node.js/NestJS stack</li>
-            <li><strong>PHP/Laravel Developer - SoftBenz Infosys</strong></li>
-            <li><strong>Laravel PHP Developer - Rewa Soft</strong></li>
-        </ul>
-    </section>
+      <!-- <img src="https://via.placeholder.com/150" alt="Aashish Rijal" class="w-32 h-32 rounded-full mx-auto mb-4 profile-img"> -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-2 mt-6">Aashish Rijal</h1>
+      <p class="text-xl text-gray-400 mb-4">Backend Developer | Kathmandu, Nepal</p>
+      <p class="text-lg max-w-2xl mx-auto">Passionate Backend Developer with expertise in Node.js, Express.js, and modern web technologies. I love building scalable applications and solving complex problems.</p>
+      <div class="mt-6 flex justify-center space-x-4">
+        <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full transition">Get in Touch</a>
+        <a href="https://github.com/aashisrjl" target="_blank" class="bg-gray-700 hover:bg-gray-800 text-white py-2 px-6 rounded-full transition">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>Bachelor's in Software Engineering</strong><br>NAMI College</li>
-            <li><strong>National College of Computer Studies</strong></li>
-        </ul>
-    </section>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6 section">
+      <h2 class="text-3xl font-bold text-center mb-12">Skills & Endorsements</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">JavaScript</h3>
+          <p class="text-gray-400">4.4/5.0 • Top 10%</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">Node.js</h3>
+          <p class="text-gray-400">4.5/5.0 • Top 15%</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">React.js</h3>
+          <p class="text-gray-400">3.9/5.0 • Top 25%</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">Express.js</h3>
+          <p class="text-gray-400">4.3/5.0 • Top 20%</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">MongoDB</h3>
+          <p class="text-gray-400">4.3/5.0</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">TailwindCSS</h3>
+          <p class="text-gray-400">4.0/5.0</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">TypeScript</h3>
+          <p class="text-gray-400">3.8/5.0</p>
+        </div>
+        <div class="skill-card bg-gray-900 p-6 rounded-lg text-center">
+          <h3 class="text-xl font-semibold">Next.js</h3>
+          <p class="text-gray-400">3.5/5.0</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Location: Kathmandu, Bagmati, Nepal</p>
-        <p>Website: <a href="https://aashishrijal.com.np/">aashishrijal.com.np</a></p>
-        <p>LinkedIn: <a href="https://np.linkedin.com/in/aashish-rijal">LinkedIn Profile</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/aashish.rijal.7/">Facebook Profile</a></p>
-    </section>
+  <!-- Experience Section -->
+  <section id="experience" class="py-20">
+    <div class="container mx-auto px-6 section">
+      <h2 class="text-3xl font-bold text-center mb-12">Experience</h2>
+      <div class="space-y-8">
+        <div class="experience-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Backend Developer</h3>
+          <p class="text-gray-400">Freelance • Jan 2025 - Present</p>
+          <p class="mt-2">Developing scalable web applications using Node.js, Express.js, and modern databases. Working with clients to build custom solutions and APIs.</p>
+          <p class="text-gray-500 mt-2">Tech: Node.js, Express.js, MongoDB, MySQL, Socket.io</p>
+        </div>
+        <div class="experience-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Full Stack Developer</h3>
+          <p class="text-gray-400">Personal Projects • Jan 2024 - Present</p>
+          <p class="mt-2">Built various web applications including e-commerce platforms, real-time chat applications, and portfolio websites.</p>
+          <p class="text-gray-500 mt-2">Tech: React.js, Node.js, TailwindCSS, JavaScript, MongoDB</p>
+        </div>
+        <div class="experience-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Junior Developer</h3>
+          <p class="text-gray-400">Learning Phase • Jan 2023 - Dec 2024</p>
+          <p class="mt-2">Intensive learning period focusing on backend development fundamentals, database design, and web development best practices.</p>
+          <p class="text-gray-500 mt-2">Tech: HTML, CSS, JavaScript, Node.js, MySQL</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        &copy; 2025 Aashish Rijal. All rights reserved.
-    </footer>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6 section">
+      <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="project-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">LetsTalk</h3>
+          <p class="text-gray-400 mt-2">A language practice community platform with real-time video chat, peer matching, and interactive learning features.</p>
+          <p class="text-gray-500 mt-2">Tech: Node.js, React.js, WebRTC, TailwindCSS, Express.js</p>
+        </div>
+        <div class="project-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Sewa-Sathi</h3>
+          <p class="text-gray-400 mt-2">E-government platform providing information about government services, processes, required documents, and complaint management system.</p>
+          <p class="text-gray-500 mt-2">Tech: Node.js, React.js, MongoDB, Express.js, TailwindCSS</p>
+        </div>
+        <div class="project-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Future Learning Hub</h3>
+          <p class="text-gray-400 mt-2">Professional consultancy website frontend with modern design, responsive layout, and optimized user experience.</p>
+          <p class="text-gray-500 mt-2">Tech: React.js, TailwindCSS, JavaScript, HTML5, CSS3</p>
+        </div>
+        <div class="project-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">NepTour</h3>
+          <p class="text-gray-400 mt-2">A comprehensive tourism platform for Nepal with booking system and tour management functionality.</p>
+          <p class="text-gray-500 mt-2">Tech: Node.js, React.js, MySQL, Express</p>
+        </div>
+        <div class="project-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Chatting Web App</h3>
+          <p class="text-gray-400 mt-2">Real-time chat application with socket.io for instant messaging and group chats.</p>
+          <p class="text-gray-500 mt-2">Tech: Node.js, Socket.io, MySQL, React</p>
+        </div>
+        <div class="project-card bg-gray-900 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold">Ecommerce Backend</h3>
+          <p class="text-gray-400 mt-2">Complete e-commerce backend with authentication, payment integration, and admin panel.</p>
+          <p class="text-gray-500 mt-2">Tech: Node.js, MySQL, Express, Postman</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="container mx-auto px-6 section">
+      <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
+      <p class="text-lg text-center max-w-2xl mx-auto mb-8">I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <p class="text-gray-400">Email</p>
+          <a href="mailto:aashisrijal252@gmail.com" class="text-blue-400 hover:underline">aashisrijal252@gmail.com</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <p class="text-gray-400">Phone</p>
+          <a href="tel:+9779847749997" class="text-blue-400 hover:underline">+977 9847749997</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <p class="text-gray-400">LinkedIn</p>
+          <a href="https://linkedin.com/in/aashisrjl" target="_blank" class="text-blue-400 hover:underline">Professional Profile</a>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <p class="text-gray-400">GitHub</p>
+          <a href="https://github.com/aashisrjl" target="_blank" class="text-blue-400 hover:underline">Code Repository</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-900 text-center">
+    <p>© 2025 Aashish Rijal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navbar links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-    </script>
+      });
+    });
+
+    // Navbar background change on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Fade-in animation for sections
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
