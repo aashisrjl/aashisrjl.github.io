@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aashish Rijal - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aashish Rijal</h1>
+        <p>Backend Developer</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate Backend Developer specializing in Node.js and Express.js. Building scalable web applications and always learning new technologies. Passionate about seamless user experiences and web performance, I use Tailwind CSS for responsive design and integrate various libraries to enhance functionality.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>NestJS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>Laravel</li>
+            <li>Tailwind CSS</li>
+            <li>Responsive Design</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Software Engineer - Insight Workshop</strong><br>JavaScript/Python Developer</li>
+            <li><strong>Backend Developer - YoungInnovations</strong><br>Node.js/NestJS stack</li>
+            <li><strong>PHP/Laravel Developer - SoftBenz Infosys</strong></li>
+            <li><strong>Laravel PHP Developer - Rewa Soft</strong></li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>Bachelor's in Software Engineering</strong><br>NAMI College</li>
+            <li><strong>National College of Computer Studies</strong></li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Location: Kathmandu, Bagmati, Nepal</p>
+        <p>Website: <a href="https://aashishrijal.com.np/">aashishrijal.com.np</a></p>
+        <p>LinkedIn: <a href="https://np.linkedin.com/in/aashish-rijal">LinkedIn Profile</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/aashish.rijal.7/">Facebook Profile</a></p>
+    </section>
+
+    <footer>
+        &copy; 2025 Aashish Rijal. All rights reserved.
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
